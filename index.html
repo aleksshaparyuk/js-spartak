@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт ФК Спартак</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. ШАПКА САЙТА -->
+    <header>
+        <div class="stars">★★★★</div>
+        <img src="new-logo.png" alt="Логотип ФК Спартак" class="logo">
+        <h1>Привет, все про ФК Спартак</h1>
+        <p>Добро пожаловать на сайт великого и могучего клуба!</p>
+
+        <!-- НАВИГАЦИОННЫЕ КНОПКИ -->
+        <nav>
+            <button class="btn" id="playGimnBtn">Гимн Максим</button>
+            <button class="btn btn-achievements" id="openModalBtn">Достижения</button>
+            <button class="btn btn-rpl" id="openRplBtn">📊 Таблица РПЛ</button>
+            <button class="btn btn-news" id="openNewsBtn">📰 Новости РПЛ</button>
+        </nav>
+    </header>
+
+    <!-- 2. ГЛАВНЫЙ КОНТЕНТ -->
+    <main class="container">
+        <div id="gimnCup" class="cup-hidden">🏆</div>
+        <div id="championText">МЫ ЧЕМПИОНЫ!</div>
+
+        <!-- СЕКЦИЯ МАТЧЕЙ ОНЛАЙН -->
+        <section class="live-section">
+            <h2>🔴 Матчи РПЛ Онлайн</h2>
+            <div class="match-card">
+                <div class="team">🔴⚪ Спартак</div>
+                <div class="score" id="liveScore">2 : 1</div>
+                <div class="team">Зенит 🔵</div>
+                <div class="match-status">75' мин (Идёт матч)</div>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <h2>Самый титулованный клуб России</h2>
+            <p>Здесь представлена вся самая свежая и важная информация о команде!</p>
+        </section>
+    </main>
+
+    <!-- Контейнер для падающих звезд -->
+    <div id="starContainer"></div>
+
+    <!-- 3. ВСПЛЫВАЮЩЕЕ ОКНО ДОСТИЖЕНИЙ -->
+    <div class="modal-overlay" id="achievementModal">
+        <div class="modal-window">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <audio id="spartakAudio" src="gimn.mp3"></audio>
+            <h2>🏆 Достижения ФК Спартак</h2>
+            <ul class="achievements-list" id="list"></ul>
+        </div>
+    </div>
+
+    <!-- 4. ПОЛНАЯ ТАБЛИЦА РПЛ (16 КОМАНД) -->
+    <div class="modal-overlay" id="rplModal">
+        <div class="modal-window modal-wide">
+            <span class="close-btn" id="closeRplBtn">&times;</span>
+            <h2>📊 Турнирная Таблица РПЛ</h2>
+            <div class="table-wrapper">
+                <table class="rpl-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Команда</th>
+                            <th>И</th>
+                            <th>В</th>
+                            <th>Н</th>
+                            <th>П</th>
+                            <th>О</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="spartak-row">
+                            <td>1</td>
+                            <td>🔴⚪ Спартак</td>
+                            <td>18</td>
+                            <td>12</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>39</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Зенит</td>
+                            <td>18</td>
+                            <td>11</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Краснодар</td>
+                            <td>18</td>
+                            <td>11</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>37</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Динамо М</td>
+                            <td>18</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>ЦСКА</td>
+                            <td>18</td>
+                            <td>9</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>31</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Локомотив</td>
+                            <td>18</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Рубин</td>
+                            <td>18</td>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Ростов</td>
+                            <td>18</td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Крылья Советов</td>
+                            <td>18</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Пари НН</td>
+                            <td>18</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>9</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Ахмат</td>
+                            <td>18</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Факел</td>
+                            <td>18</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>9</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Динамо Махачкала</td>
+                            <td>18</td>
+                            <td>3</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Оренбург</td>
+                            <td>18</td>
+                            <td>3</td>
+                            <td>6</td>
+                            <td>9</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Химки</td>
+                            <td>18</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>11</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Акрон</td>
+                            <td>18</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>12</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. ВСПЛЫВАЮЩЕЕ ОКНО НОВОСТЕЙ -->
+    <div class="modal-overlay" id="newsModal">
+        <div class="modal-window">
+            <span class="close-btn" id="closeNewsBtn">&times;</span>
+            <h2>📰 Главные Новости РПЛ</h2>
+            <div class="news-list" id="newsContainer">
+                <article class="news-card">
+                    <h3>🔥 «Спартак» готовится к ключевой игре тура</h3>
+                    <p>Тренерский штаб провел открытую тренировку перед важнейшим матчем сезона.</p>
+                </article>
+                <article class="news-card">
+                    <h3>⚽ Трансферные новости РПЛ</h3>
+                    <p>Клубы Премьер-Лиги активно прорабатывают варианты усиления состава.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. ПОДВАЛ -->
+    <footer>
+        <p>© 2026 ФК Спартак Москва. Сайт болельщика.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

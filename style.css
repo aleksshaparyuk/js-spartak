@@ -1,0 +1,324 @@
+/* --- СБРОС И ОСНОВНЫЕ СТИЛИ --- */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("Sm.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #ba382f;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    transition: background-color 0.8s ease;
+}
+
+/* --- ШАПКА --- */
+header {
+    background-color: rgba(186, 56, 47, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 28px;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    max-width: 130px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* КНОПКИ */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #ba382f;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+}
+
+.btn-achievements {
+    background-color: #ffc107;
+    color: #000000;
+}
+
+.btn-achievements:hover {
+    background-color: #e0a800;
+}
+
+.btn-rpl {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-rpl:hover {
+    background-color: #222222;
+}
+
+.btn-news {
+    background-color: #008cba;
+    color: white;
+}
+
+.btn-news:hover {
+    background-color: #00688b;
+}
+
+/* --- КОНТЕЙНЕР --- */
+.container {
+    flex: 1 0 auto;
+    max-width: 800px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cup-hidden {
+    display: none;
+    font-size: 50px;
+}
+
+.cup-hidden.show {
+    display: block;
+}
+
+#championText {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.6s ease;
+}
+
+#championText.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- МОДАЛЬНЫЕ ОКНА --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-window {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.modal-wide {
+    max-width: 650px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaaaaa;
+}
+
+.close-btn:hover {
+    color: #ff0000;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.achievements-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 18px;
+}
+
+/* --- СИНИЙ ФОН И ЗВЕЗДЫ --- */
+body.blue-bg {
+    background-image: none !important;
+    background-color: #00205B !important;
+    color: #ffffff;
+}
+
+.falling-star {
+    position: fixed;
+    top: -50px;
+    color: #ffd700;
+    font-size: 24px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* --- ТАБЛИЦА РПЛ --- */
+.table-wrapper {
+    max-height: 350px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.rpl-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rpl-table th,
+.rpl-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.rpl-table th {
+    background-color: #ba382f;
+    color: white;
+}
+
+.spartak-row {
+    background-color: #ffebee;
+    font-weight: bold;
+    color: #ba382f;
+}
+
+/* --- НОВОСТИ И ОНЛАЙН --- */
+.news-card {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.news-card h3 {
+    margin: 5px 0;
+    color: #ba382f;
+    font-size: 16px;
+}
+
+.news-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.live-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.match-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+    color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.score {
+    background: #ba382f;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 22px;
+}
+
+.match-status {
+    width: 100%;
+    font-size: 12px;
+    color: #e53935;
+    margin-top: 5px;
+}
+
+/* --- ФУТЕР --- */
+footer {
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #aaaaaa;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 2px solid #ba382f;
+    width: 100%;
+}
